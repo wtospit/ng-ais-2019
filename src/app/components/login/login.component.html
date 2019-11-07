@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card mt2">
+        <div class="card-body">
+            <form class="form" [formGroup]="loginForm">
+                <div class="form-group">
+                    <label>Login</label>
+                    <input type="text" 
+                    [ngClass]="{'is-invalid': loginForm.dirty && loginTxt.getError('required')}"
+                    class="form-control" formControlName="login" />
+                    <div class="invalid-feedback">
+                        Please provide a valid city.
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" formControlName="password" />
+                </div>
+                <button class="btn btn-primary" (click)="login()">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

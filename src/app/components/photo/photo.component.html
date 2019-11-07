@@ -1,0 +1,10 @@
+<div class="card" [routerLink]="['/photo/detail', member._id]">
+    <div class="card-img-float">
+        <img [src]="member.imgUrl" alt="" class="card-img-top">
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">
+            {{ member.name | bnkSuffix: 'upper' }}
+        </h4>
+    </div>
+</div>

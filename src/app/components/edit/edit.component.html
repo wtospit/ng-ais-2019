@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="card mt-2">
+        <div class="card-body">
+            <form class="form" [formGroup]="editForm" *ngIf="editForm">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                </div>
+                <div class="form-group">
+                    <label>Image URL</label>
+                    <input type="text" class="form-control" formControlName="imgUrl">
+                    <span *ngIf="editForm.get('imgUrl').getError('required')" class="required">require</span>
+                    <span *ngIf="editForm.get('imgUrl').getError('url')" class="required">{{imgUrlInput.getError('url')}}</span>
+                </div>
+                <div class="form-group">
+                    <label>Instagram ID</label>
+                    <input type="text" class="form-control" formControlName="instagramId">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" (click)="save()">Save</button>
+                    <button class="btn btn-default ml-1" type="button" (click)="reset()">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
